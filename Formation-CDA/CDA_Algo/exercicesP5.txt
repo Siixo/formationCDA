@@ -1,0 +1,79 @@
+Illusions d'optiques: 
+Carré des cercles:
+
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  stroke(0);
+  strokeWeight(2);
+  noFill();
+  drawCircles();
+  drawRectangle();
+}
+
+function drawRectangle(){
+  stroke(150);
+  let r = 0
+  for(let i = 0; i < 10; i++){
+    rect(200-(r/2), 200-(r/2) ,r);
+    stroke(r-30, r-30, r-30);
+    r += 75;
+    
+  }
+  
+  
+}
+
+function drawCircles(){
+  for(let i = 0; i < 600; i += 10){
+    circle(200,200, i);
+  }
+}
+
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  stroke(0);
+  strokeWeight(2);
+  noFill();
+  //drawcircles();
+  //drawRectangle();
+  lignesP();
+
+}
+
+//function drawRectangle(){
+//  stroke(150);
+//  let r = 0
+//  for(let i = 0; i < 10; i++){
+//    rect(200-(r/2), 200-(r/2) ,r);
+//    stroke(r-30, r-30, r-30);
+//    r += 75;    
+//  }
+//}
+
+function drawCircles(){
+  for(let i = 0; i < 600; i += 10){
+    circle(200,200, i);
+  }
+}
+
+
+
+function lignesP(){
+  for(let i = 0; i < 40; i++){
+    line(0, i*10, 400, i*10);
+    for(let j = 0; j < 40; j++){
+      square(abs(sin(j)), i*10, 10);
+    }
+  }
+}
+
