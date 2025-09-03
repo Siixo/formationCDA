@@ -1,0 +1,21 @@
+meta {
+  name: ntm
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3000/todo
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "title":"titre"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
