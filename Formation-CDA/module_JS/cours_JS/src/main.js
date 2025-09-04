@@ -1,14 +1,5 @@
-import "./style.css";
 import { animate, text, stagger } from "animejs";
-
-// Timeline
-import timelineSteps from "./services/js/timelineData";
-import { fillTimeline } from "./services/js/timelineService";
-const timeline = document.getElementById("timeline");
-
-fillTimeline(timelineSteps, timeline);
-
-import eastereggs from "easter-egg-collection";
+import "./style.css";
 
 const { chars } = text.split("#bouncy-text", {
   chars: { wrap: true }, // Wrap chars for overflow safety
@@ -35,7 +26,7 @@ fetch("/src/components/header.html")
 fetch("/src/components/footer.html")
   .then((res) => res.text())
   .then((html) => {
-    const navbar = document.getElementById("footer");
+    const footer = document.getElementById("footer");
     footer.innerHTML = html;
   });
 
@@ -131,40 +122,15 @@ tab.forEach((player, index) => {
   `;
 
   tableBody.appendChild(row);
-
-  // Add click events for minus and plus
-  document.getElementById(`minus-${index}`).addEventListener("click", () => {
-    console.log(`Minus clicked for ${player.nom}`);
-    if (player.chocoblasts > 0) player.chocoblasts--;
-    document.getElementById(`count-${index}`).textContent = player.chocoblasts;
-  });
-
-  document.getElementById(`plus-${index}`).addEventListener("click", () => {
-    console.log(`Plus clicked for ${player.nom}`);
-    player.chocoblasts++;
-    document.getElementById(`count-${index}`).textContent = player.chocoblasts;
-  });
 });
 
 function setLocalStorage() {
   localStorage.setItem(textarea.id, textarea.value);
-  localStorage.setItem("players", JSON.stringify(tab));
 }
 function getLocalStorage() {
   const value = localStorage.getItem(textarea.id);
-  const players = localStorage.getItem("players");
-
-  if (players) {
-    tab = JSON.parse(players);
-    tab.forEach((player, index) => {
-      document.getElementById(`count-${index}`).textContent =
-        player.chocoblasts;
-    });
-  }
 
   if (value) {
     textarea.value = value;
   }
 }
-
-//Exercice Timeline
