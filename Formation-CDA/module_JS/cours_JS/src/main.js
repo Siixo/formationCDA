@@ -41,7 +41,6 @@ let counter = 0;
 //Initialisation du texte + récupération localStorage
 element.innerText = "Cliquer ici!";
 element.classList.add("text-white");
-getLocalStorage();
 
 bouton.addEventListener("click", (event) => {
   event.preventDefault();
@@ -96,6 +95,8 @@ let tab = [
   wilfried,
 ];
 
+getLocalStorage();
+
 const tableBody = document.getElementById("player-table");
 
 tab.forEach((player, index) => {
@@ -122,15 +123,31 @@ tab.forEach((player, index) => {
   `;
 
   tableBody.appendChild(row);
+  document.getElementById(`minus-${index}`).addEventListener("click", () => {
+    if (player.chocoblasts > 0) player.chocoblasts--;
+    document.getElementById(`count-${index}`).textContent = player.chocoblasts;
+    setLocalStorage();
+  });
+
+  document.getElementById(`plus-${index}`).addEventListener("click", () => {
+    player.chocoblasts++;
+    document.getElementById(`count-${index}`).textContent = player.chocoblasts;
+    setLocalStorage();
+  });
 });
 
 function setLocalStorage() {
   localStorage.setItem(textarea.id, textarea.value);
+  localStorage.setItem("players", JSON.stringify(tab));
 }
 function getLocalStorage() {
   const value = localStorage.getItem(textarea.id);
+  const players = localStorage.getItem("players");
 
   if (value) {
     textarea.value = value;
+  }
+  if (players) {
+    tab = JSON.parse(players); // restore saved scores
   }
 }
