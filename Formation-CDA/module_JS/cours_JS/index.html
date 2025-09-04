@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module JS</title>
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <main>
+      <div
+        class="w-screen h-screen bg-gray-950 flex flex-col items-center justify-center text-white text-9xl"
+      >
+        <h1 id="bouncy-text">Module JavaScript</h1>
+        <a href="#EXERCICES" class="animate-bounce mt-2">
+          <svg
+            class="h-40"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7 10L12 15L17 10"
+              stroke="#fff"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <div class="w-screen h-screen bg-gray-100 text-black" id="EXERCICES">
+        <h2 class="text-4xl text-center p-10">Exercices</h2>
+        <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8 p-10">
+          <div class="h-auto rounded-2xl bg-gray-300 m-4 p-2">
+            <h2 class="m-2 text-2xl text-center">Exercice 1:</h2>
+            <div class="flex justify-center items-center">
+              <a
+                id="bouton1"
+                class="inline-block rounded-sm border border-indigo-600 bg-indigo-600 px-12 py-3 m-4 text-sm font-medium text-white hover:bg-indigo-600/50 hover:text-indigo-600 focus:ring-3 focus:outline-hidden"
+                href="#"
+              >
+                <span id="element"></span>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="h-auto rounded-2xl bg-gray-300 flex flex-col m-4 p-2 justify-center items-center gap-4"
+          >
+            <h1 class="text-2xl">Exercice 2:</h1>
+            <h2 class="">
+              On désactive le bouton si le texte fait plus de 5 charactères
+            </h2>
+            <p class="text-sm">Le contenu est sauvegardé dans localStorage</p>
+            <textarea
+              id="Textarea"
+              class="border border-gray-400 rounded p-2 w-64 h-24"
+              placeholder="Type something..."
+            ></textarea>
+            <button
+              id="myButton"
+              class="inline-block rounded-sm border border-indigo-600 bg-indigo-600 px-12 py-3 m-4 text-sm font-medium text-white hover:bg-indigo-600/50 hover:text-indigo-600 focus:ring-3 focus:outline-hidden hover:cursor-pointer"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+
+        <!-- Bouton Dom selector -->
+        <div class="w-full flex justify-center mt-4">
+          <a
+            class="group flex items-center justify-between gap-4 rounded-lg border border-indigo-600 bg-indigo-600 px-5 py-3 transition-colors hover:bg-transparent focus:ring-3 focus:outline-hidden"
+            href="/src/exercices/html/dom-selectors.html"
+          >
+            <span
+              class="font-medium text-white transition-colors group-hover:text-indigo-600"
+            >
+              Dom Selectors
+            </span>
+
+            <span
+              class="shrink-0 rounded-full border border-current bg-white p-2 text-indigo-600"
+            >
+              <svg
+                class="size-5 shadow-sm rtl:rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <!-- Timeline -->
+        <div class="w-full flex justify-center mt-4">
+          <a
+            class="group flex items-center justify-between gap-4 rounded-lg border border-indigo-600 bg-indigo-600 px-5 py-3 transition-colors hover:bg-transparent focus:ring-3 focus:outline-hidden"
+            href="/src/services/html/timeline.html"
+          >
+            <span
+              class="font-medium text-white transition-colors group-hover:text-indigo-600"
+            >
+              Timeline
+            </span>
+
+            <span
+              class="shrink-0 rounded-full border border-current bg-white p-2 text-indigo-600"
+            >
+              <svg
+                class="size-5 shadow-sm rtl:rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <span class="flex items-center m-10">
+          <span class="h-px flex-1 bg-gray-900"></span>
+        </span>
+
+        <div class="w-full flex justify-center mt-4">
+          <h1 class="text-4xl">Compteur de mensonges</h1>
+        </div>
+        <div class="overflow-x-auto m-10">
+          <table
+            class="min-w-full divide-y-2 divide-gray-200 dark:divide-gray-700"
+          >
+            <thead>
+              <tr class="*:font-medium dark:*:text-white">
+                <th class="px-3 py-2">Nom</th>
+                <th class="px-3 py-2">Chocoblasts</th>
+              </tr>
+            </thead>
+            <tbody id="player-table" class="divide-y dark:divide-gray-700">
+              <!-- JS will inject rows here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
